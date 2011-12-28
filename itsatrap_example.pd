@@ -1,0 +1,12 @@
+#N canvas 0 0 974 474 10;
+#X obj 224 206 dac~;
+#X obj 157 146 *~;
+#X obj 129 106 phasor~ 440;
+#X obj 124 77 random 1000;
+#X obj 143 -34 itsatrap;
+#X connect 1 0 0 0;
+#X connect 1 0 0 1;
+#X connect 2 0 1 0;
+#X connect 3 0 2 0;
+#X connect 4 0 3 0;
+#X connect 4 1 1 1;
