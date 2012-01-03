@@ -1,0 +1,20 @@
+#N canvas 0 0 974 474 10;
+#X obj 157 146 *~;
+#X obj 129 106 phasor~ 440;
+#X obj 124 77 random 1000;
+#X obj 143 -34 itsatrap;
+#X obj 327 259 *~;
+#X obj 501 80 itsatrap;
+#X obj 361 311 dac~;
+#X text 512 -20 set duration of top envelope to ~50 ms and set to repeat
+so it pumps out a series of grains.;
+#X text 616 253 set lower envelope to ~1000 ms to create a volume emvelope
+for the entire series of grains.;
+#X connect 0 0 4 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 3 0 2 0;
+#X connect 3 1 0 1;
+#X connect 4 0 6 0;
+#X connect 4 0 6 1;
+#X connect 5 1 4 1;
