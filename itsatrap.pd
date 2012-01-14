@@ -1,57 +1,57 @@
-#N canvas 30 71 912 435 10;
+#N canvas 50 165 912 435 10;
 #X obj 49 240 outlet;
 #X obj 107 129 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 208 262 vline~;
-#X text 393 163 off;
-#X floatatom 211 162 5 0 0 0 - - #0-off_t;
-#X obj 252 160 hsl 128 15 0 1000 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 7200 1;
-#X floatatom 210 122 5 0 0 0 - - #0-o_t;
-#X obj 252 123 hsl 128 15 0 1000 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
-#X obj 712 25 delay 0;
+#X text 389 176 off;
+#X floatatom 213 177 5 0 0 0 - - #0-off_t;
+#X obj 252 176 hsl 128 15 0 1000 0 0 empty \$0-ex_off empty -2 -8 0
+10 -262144 -1 -1 317 1;
+#X floatatom 209 137 5 0 0 0 - - #0-o_t;
+#X obj 252 137 hsl 128 15 0 1000 0 0 empty \$0-ex_on empty -2 -8 0
+10 -262144 -1 -1 952 1;
+#X obj 770 27 delay 0;
 #X obj 776 264 delay 0;
-#X floatatom 209 104 5 0 0 0 - - #0-a_t;
-#X obj 252 104 hsl 128 15 0 1000 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
-#X text 382 103 attack;
-#X obj 527 50 pack 1 \$2;
-#X floatatom 210 141 5 0 0 0 - - #0-d_t;
-#X obj 252 142 hsl 128 15 0 1000 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
-#X text 388 142 decay;
+#X floatatom 209 117 5 0 0 0 - - #0-a_t;
+#X obj 252 117 hsl 128 15 0 1000 0 0 empty \$0-ex_attack empty -2 -8
+0 10 -262144 -1 -1 0 1;
+#X text 391 115 attack;
+#X obj 586 58 pack 1 \$2;
+#X floatatom 211 157 5 0 0 0 - - #0-d_t;
+#X obj 253 157 hsl 128 15 0 1000 0 0 empty \$0-ex_decay empty -2 -8
+0 10 -262144 -1 -1 0 1;
+#X text 391 154 decay;
 #X obj 514 256 pack 0 \$2;
-#X text 406 119 on;
+#X text 399 135 on;
 #X obj 209 280 outlet~;
-#X text 111 186 bang;
-#X text 344 183 envelope;
+#X text 111 195 bang;
+#X text 345 195 envelope;
 #X obj 518 204 delay 0;
-#X obj 508 13 delay 0;
+#X obj 567 21 delay 0;
 #X text 808 208 off time;
 #X text 570 148 decay time;
-#X text 750 -18 on time;
-#X text 602 -15 attack time;
-#X text 696 -17 on bang;
+#X text 808 -16 on time;
+#X text 661 -7 attack time;
+#X text 754 -15 on bang;
 #X text 476 149 decay bang;
-#X text 729 73 decay bang;
+#X text 787 75 decay bang;
 #X text 201 216 envelope out;
 #X text 530 301 envelope out;
-#X text 519 92 envelope out;
+#X text 578 100 envelope out;
 #X text 730 207 off bang;
 #X text 735 365 retrigger bang;
-#X text 126 49 retrigger bang;
-#X obj 561 -16 r \$0-a_t;
-#X obj 132 73 r \$0-ret_b;
+#X text 97 53 retrigger bang;
+#X obj 620 -8 r \$0-a_t;
+#X obj 22 53 r \$0-ret_b;
 #X obj 10 137 s \$0-start_bang;
 #X obj 206 242 r \$0-v;
 #X obj 45 216 r \$0-start_bang;
-#X obj 447 -14 r \$0-start_bang;
-#X obj 528 32 s \$0-o_b;
-#X obj 703 1 r \$0-o_b;
-#X obj 787 1 r \$0-o_t;
-#X obj 530 69 s \$0-v;
-#X obj 722 50 s \$0-d_b;
+#X obj 506 -6 r \$0-start_bang;
+#X obj 587 40 s \$0-o_b;
+#X obj 761 3 r \$0-o_b;
+#X obj 845 3 r \$0-o_t;
+#X obj 589 77 s \$0-v;
+#X obj 780 52 s \$0-d_b;
 #X obj 487 172 r \$0-d_b;
 #X obj 579 170 r \$0-d_t;
 #X obj 517 229 s \$0-off_b;
@@ -65,6 +65,21 @@
 #X text 129 128 start/;
 #X text 133 139 trigger;
 #X text 123 163 autorepeats;
+#X obj 239 -12 inlet;
+#X obj 331 -10 inlet;
+#X obj 421 -10 inlet;
+#X obj 140 -11 inlet;
+#X obj 142 17 s \$0-ex_attack;
+#X obj 241 17 s \$0-ex_on;
+#X obj 335 17 s \$0-ex_decay;
+#X obj 427 18 s \$0-ex_off;
+#X text 319 99 decay_in;
+#X text 400 99 off_in;
+#X text 250 99 on_in;
+#X text 178 99 attack_in;
+#X obj 40 0 inlet;
+#X obj 40 21 s \$0-ret_b;
+#X text 102 99 trigger_in;
 #X connect 1 0 39 0;
 #X connect 2 0 19 0;
 #X connect 5 0 4 0;
@@ -94,4 +109,9 @@
 #X connect 53 0 9 1;
 #X connect 55 0 54 0;
 #X connect 56 0 55 1;
-#X coords 0 -1 1 1 340 100 1 100 100;
+#X connect 60 0 65 0;
+#X connect 61 0 66 0;
+#X connect 62 0 67 0;
+#X connect 63 0 64 0;
+#X connect 72 0 73 0;
+#X coords 0 -1 1 1 340 110 2 100 100;
